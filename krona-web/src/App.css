@@ -1,0 +1,303 @@
+:root {
+  --bg-color: #120d14;
+  --card-bg: #1d1421;
+  --accent-pink: #ec4899;
+  --accent-pink-hover: #db2777;
+  --accent-soft: #f472b6;
+  --text-main: #ffffff;
+  --text-muted: #a195a8;
+  --border: #322138;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.krona-container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem); /* Adapta o tamanho automaticamente conforme o ecrã */
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #ec4899; /* Fallback */
+  background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: default;
+}
+
+/* Efeito suave ao passar o rato */
+.header h1:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 12px rgba(236, 72, 153, 0.4));
+}
+
+.header p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  transition: opacity 0.3s ease;
+}
+
+/* Ajustes de espaçamento extra para ecrãs pequenos */
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 24px;
+  }
+}
+
+.card-form {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 16px;
+  border-radius: 12px;
+}
+
+.card-form h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.input-field {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #0d0810;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.25);
+}
+
+.btn-primary {
+  margin-top: 8px;
+  padding: 12px;
+  background: var(--accent-pink);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-pink-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ficha-container {
+  margin-top: 40px;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.ficha-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.ficha-header h2 {
+  margin: 0 0 8px 0;
+  color: var(--text-main);
+}
+
+.badge-info {
+  display: inline-block;
+  background: rgba(236, 72, 153, 0.2);
+  color: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(236, 72, 153, 0.4);
+}
+
+.bloco-destaque {
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.bloco-prescricao {
+  background: rgba(236, 72, 153, 0.08);
+  border-left: 4px solid var(--accent-pink);
+}
+
+.bloco-cardio {
+  background: rgba(244, 114, 182, 0.08);
+  border-left: 4px solid var(--accent-soft);
+}
+
+.bloco-restricao {
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid #f59e0b;
+  color: #fbbf24;
+}
+
+.treino-dia-card {
+  background: #0d0810;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+}
+
+.treino-dia-card h4 {
+  margin: 0 0 10px 0;
+  color: var(--accent-soft);
+}
+
+.treino-dia-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+/* Estilos do Menu de Abas e Painel Admin */
+.tab-menu {
+    width: 100%;
+    gap: 8px;
+  }
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: var(--accent-pink);
+  color: #ffffff;
+  border-color: var(--accent-pink);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Empilha um por baixo do outro em ecrãs pequenos */
+  gap: 12px;
+}
+
+.metric-card {
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-title {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-pink);
+}
+
+.table-wrapper {
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  -webkit-overflow-scrolling: touch; /* Scroll suave em dispositivos iOS */
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 580px; /* Garante que a tabela tenha um tamanho mínimo adequado e permita scroll horizontal se necessário */
+}
+
+.admin-table th, .admin-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.ficha-container {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+.admin-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.btn-sm {
+  background: var(--accent-pink);
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-sm:hover {
+  background: var(--accent-pink-hover);
+}
